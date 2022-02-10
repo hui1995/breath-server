@@ -3,16 +3,16 @@ package main
 import (
 	"context"
 	"github.com/tencentyun/cos-go-sdk-v5"
+	"io"
 	"net/http"
 	"net/url"
 	"os"
-	"strings"
 )
 
-func main() {
+func UploadCos(name string, data io.Reader, bucket string) {
 	// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
 	// 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
-	u, _ := url.Parse("https://image-1303955118.cos.ap-shanghai.myqcloud.com")
+	u, _ := url.Parse("https://" + bucket + ".cos.ap-shanghai.myqcloud.com")
 	b := &cos.BaseURL{BucketURL: u}
 	client := cos.NewClient(b, &http.Client{
 		Transport: &cos.AuthorizationTransport{
@@ -24,11 +24,8 @@ func main() {
 		},
 	})
 	// Case1 使用 Put 上传对象
-	key := "exampleobject"
-
-	//data=DoGet("http://img.cssmoban.com/UploadFiles/2021/17/2021092419140967590.jpg")
 
 	// Case 3 上传 0 字节文件, 设置输入流长度为 0
-	_, _ = client.Object.Put(context.Background(), key, strings.NewReader("info"), nil)
+	_, _ = client.Object.Put(context.Background(), name, data, nil)
 
 }
