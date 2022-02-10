@@ -43,8 +43,8 @@ func SelectBySourceUrl(href string) SourceInfo {
 	//defer Db.Close()
 	return *sourceInfo
 }
-func updateViewAndSource(title string, image string, zip_url string, id int) {
+func updateViewAndSource(zip_url string, id int) {
 	var sourceInfo SourceInfo
-	Db.First(&sourceInfo, id).Updates(SourceInfo{View: sourceInfo.View + 1, Title: title, Images: image, ZipUrl: zip_url})
+	Db.First(&sourceInfo, id).Updates(SourceInfo{View: sourceInfo.View + 1, ZipUrl: zip_url})
 
 }
