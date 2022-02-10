@@ -27,8 +27,13 @@ func (CardNumber) TableName() string {
 //}
 
 func SelectBySerect(serect string) CardNumber {
-	cardNumber := new(CardNumber)
+	var cardNumber CardNumber
 	Db.Where(&CardNumber{Serect: serect}).First(&cardNumber)
 	//defer Db.Close()
-	return *cardNumber
+	return cardNumber
+}
+func ChangeStatus(id int) {
+	var cardNumber CardNumber
+	Db.First(&cardNumber, id).Update(CardNumber{Status: 1})
+
 }

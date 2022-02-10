@@ -35,10 +35,16 @@ func Add(sourceInfo SourceInfo) {
 	//	fmt.Println(result.Error)
 	//
 }
+
+//拆根据url查询是否存在数据
 func SelectBySourceUrl(href string) SourceInfo {
 	sourceInfo := new(SourceInfo)
 	Db.Where(&SourceInfo{SourceUrl: href}).First(&sourceInfo)
-	Db.Find(sourceInfo)
 	//defer Db.Close()
 	return *sourceInfo
+}
+func updateViewAndSource(title string, image string, zip_url string, id int) {
+	var sourceInfo SourceInfo
+	Db.First(&sourceInfo, id).Updates(SourceInfo{View: sourceInfo.View + 1, Title: title, Images: image, ZipUrl: zip_url})
+
 }

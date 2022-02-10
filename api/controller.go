@@ -4,7 +4,7 @@ import "github.com/gin-gonic/gin"
 
 // 首页控制器
 func GetIndex(c *gin.Context) {
-	c.JSON(200, gin.H{"msg": "Hello Go"})
+	c.JSON(200, gin.H{"msg": "Hello Go words"})
 }
 
 //// 测试控制器
