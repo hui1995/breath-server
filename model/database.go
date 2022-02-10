@@ -7,6 +7,7 @@ import (
 	"github.com/spf13/viper"
 )
 
+//https://learnku.com/docs/gorm/v1/query/3786#d765a4
 // 公共Db对象
 var Db *gorm.DB
 

@@ -5,7 +5,7 @@ db:
   driver_name: mysql
   host: 111.229.8.71
   port: 3306
-  database: breathSource
+  database: eth
   username: root
   password: Breathcoder123.
   charset: utf8

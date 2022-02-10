@@ -7,7 +7,6 @@ require (
 	github.com/go-playground/validator/v10 v10.10.0 // indirect
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/jinzhu/gorm v1.9.16
-	github.com/lib/pq v1.10.4 // indirect
 	github.com/spf13/afero v1.8.0 // indirect
 	github.com/spf13/viper v1.10.1
 	golang.org/x/crypto v0.0.0-20220112180741-5e0467b6c7ce // indirect
