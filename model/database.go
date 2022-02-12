@@ -9,11 +9,18 @@ import (
 
 //https://learnku.com/docs/gorm/v1/query/3786#d765a4
 // 公共Db对象
-var Db *gorm.DB"db.port")
+var Db *gorm.DB
+
+func InitDb() {
+
+	driverName := viper.GetString("db.driver_name")
+	host := viper.GetString("db.host")
+	port := viper.GetString("db.port")
+	database := viper.GetString("db.database")
+	username := viper.GetString("db.username")
 	password := viper.GetString("db.password")
 	charset := viper.GetString("db.charset")
-	args := fmt.Sprintf(
-		"%s:%s@tcp(%s:%s)/%s?charset=%s&parseTime=true",
+	args := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=%s&parseTime=true",
 		username,
 		password,
 		host,

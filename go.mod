@@ -11,7 +11,7 @@ require (
 	github.com/mozillazg/go-httpheader v0.3.0 // indirect
 	github.com/spf13/afero v1.8.0 // indirect
 	github.com/spf13/viper v1.10.1
-	github.com/tencentyun/cos-go-sdk-v5 v0.7.33 // indirect
+	github.com/tencentyun/cos-go-sdk-v5 v0.7.33
 	golang.org/x/crypto v0.0.0-20220112180741-5e0467b6c7ce // indirect
 	golang.org/x/sys v0.0.0-20220114195835-da31bd327af9 // indirect
 	gopkg.in/ini.v1 v1.66.3 // indirect
