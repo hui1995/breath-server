@@ -2,11 +2,13 @@ package route
 
 import (
 	"breath-server/api"
+	"breath-server/middlewares"
 	"github.com/gin-gonic/gin"
 )
 
 func InitRouter() *gin.Engine {
 	router := gin.Default()
+	router.Use(middlewares.Cors())
 	download := router.Group("/download")
 	{
 		download.POST("/moban", api.DownloadMoban)
