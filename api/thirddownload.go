@@ -11,7 +11,7 @@ type MobanReq struct {
 	Serect string `json:"serect"`
 }
 type FininshReq struct {
-	id string `json:"id"`
+	Id string `json:"id"`
 }
 
 func DownloadMoban(c *gin.Context) {
@@ -28,7 +28,7 @@ func DownloadMoban(c *gin.Context) {
 		return
 	}
 	//serect,访问携带数据:
-	serect := "4637648596"
+	serect := cardnumber.Id
 	c.JSON(200, gin.H{"code": 200, "msg": "ok", "data": serect})
 	return
 

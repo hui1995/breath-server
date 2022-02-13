@@ -12,6 +12,7 @@ func InitRouter() *gin.Engine {
 	download := router.Group("/download")
 	{
 		download.POST("/moban", api.DownloadMoban)
+		download.POST("/mobanfininsh", api.DownloadMobanFinsh)
 
 	}
 
